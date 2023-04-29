@@ -5,6 +5,7 @@ from sensor.logger import logging
 from scipy.stats import ks_2samp
 import numpy as np 
 from typing import Optional
+from sensor.config import TARGET_COLUMN
 import pandas as pd 
 import os,sys
 
@@ -113,7 +114,7 @@ class DataValidation:
 
 
         except Exception as e:
-            raise(e,sys)
+            raise SensorException(e,sys)
 
 
 
@@ -141,7 +142,7 @@ class DataValidation:
              test_df = self.drop_missing_columns_value(df=test_df , report_key_name="Removing_missing_values_test_df")
 
 
-             exclude_columns = ["class"]
+             exclude_columns = [TARGET_COLUMN]
              base_df = convert_columns_float(df=base_df, exclude_columns=exclude_columns)
              train_df = convert_columns_float(df=train_df, exclude_columns=exclude_columns)
              test_df = convert_columns_float(df=test_df, exclude_columns=exclude_columns)
@@ -172,5 +173,5 @@ class DataValidation:
 
 
         except Exception as e : 
-            raise(e,sys)
+            raise SensorException(e,sys)
     
