@@ -78,7 +78,12 @@ class ModelTrainerConfig:
 
 
         
-class ModelEvaluationConfig:...
-class ModelpusherConfig:...
+class ModelEvaluationConfig:
 
+    try: 
+        def __init__(self,training_pipeline_config:TrainingPipelineConfig):
+            self.change_threshold = 0.01 # by 1% if my model is going to improve we will accept it 
+            
+    except Exception as e : 
+        raise SensorException(e , sys)
 

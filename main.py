@@ -4,6 +4,7 @@ from sensor.components.data_ingestion import DataIngestion
 from sensor.components.data_validation import DataValidation
 from sensor.components.model_trainer import ModelTrainer
 from sensor.components.data_transformation import DataTransformation
+from sensor.components.model_evaluation import ModelEvaluation
 import sys,os
 from datetime import datetime
 from sensor.entity import config_entity
@@ -40,6 +41,14 @@ if __name__=='__main__':
        model_trainer_config= config_entity.ModelTrainerConfig(training_pipeline_config=craining_pipeline_config)
        model_trainer = ModelTrainer(model_trainer_config=model_trainer_config  , data_transformation_artifact=data_transformation_artifacts)
        model_trainer_artifacts = model_trainer.initiate_model_trainer()
+
+       # model evaluation 
+       model_eval_config = config_entity.ModelEvaluationConfig(training_pipeline_config=craining_pipeline_config)
+       model_evaluator = ModelEvaluation(model_evaluation_config=model_eval_config , 
+                                          data_ingestion_artifacts=data_ingestion_artifacts,
+                                          data_transformation_artifact=data_transformation_artifacts , 
+                                          model_trainer_artifact=model_trainer_artifacts)
+       model_eval_artifact = model_evaluator.initiate_model_evaluation()
   
     except Exception as e:
         raise SensorException(e ,sys)

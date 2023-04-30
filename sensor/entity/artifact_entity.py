@@ -26,6 +26,8 @@ class ModelTrainerArtifacts:
     f1_train_score : float
     f1_test_score : float
 
-
-class ModelEvaluationArtifacts:...
+@dataclass
+class ModelEvaluationArtifacts:
+    is_model_accepted : bool
+    improved_accuracy : float
 class ModelPusherArtifacts:...

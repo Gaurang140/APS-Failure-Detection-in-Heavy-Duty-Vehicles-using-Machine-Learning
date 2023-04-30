@@ -28,7 +28,7 @@ class DataIngestion:
                 database_name=self.data_ingestion_config.database_name,
                 collection_name=self.data_ingestion_config.collection_name)
 
-            logging.info('Save data in feature store')
+          
 
             #replcae na with Nan
             
