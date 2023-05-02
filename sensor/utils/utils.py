@@ -59,10 +59,10 @@ def convert_columns_float(df:pd.DataFrame,exclude_columns:list)->pd.DataFrame:
 def save_object(file_path:str , obj : object):
     try :
         logging.info("Entered the save object method of main utils class")
-        os.makedirs(os.path.dirname(file_path))
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open (file_path , "wb") as file_obj: 
             dill.dump(obj , file_obj)
-        logging.info("Exited the save object method of MainUtils class")
+        logging.info("Exited the save object method of main utils class")
     except Exception as e : 
         raise SensorException(e,sys)
 

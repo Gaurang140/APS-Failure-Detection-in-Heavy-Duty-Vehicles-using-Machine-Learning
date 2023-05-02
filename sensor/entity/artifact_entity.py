@@ -30,4 +30,10 @@ class ModelTrainerArtifacts:
 class ModelEvaluationArtifacts:
     is_model_accepted : bool
     improved_accuracy : float
-class ModelPusherArtifacts:...
+
+
+@dataclass
+class ModelPusherArtifacts:
+    pusher_model_dir : str 
+    save_model_dir : str 
+
