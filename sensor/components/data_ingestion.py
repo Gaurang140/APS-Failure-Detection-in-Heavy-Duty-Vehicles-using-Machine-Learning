@@ -4,6 +4,7 @@ from sensor.entity import config_entity
 from sensor.entity import artifact_entity
 from sensor.exception import SensorException
 from sensor.logger import logging
+from sensor.config import TARGET_COLUMN
 import os,sys
 import pandas as pd
 import numpy as np
@@ -49,7 +50,7 @@ class DataIngestion:
             logging.info('Split data set into train test set')
             #Split the dataset
 
-            train_df,test_df = train_test_split(df , test_size=self.data_ingestion_config.test_size , random_state=42)
+            train_df,test_df = train_test_split(df , test_size=self.data_ingestion_config.test_size , random_state=42 , stratify=df[TARGET_COLUMN])
 
 
             logging.info('create_dataset directory if not available')

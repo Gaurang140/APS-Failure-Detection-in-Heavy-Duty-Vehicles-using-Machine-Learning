@@ -77,7 +77,8 @@ class ModelEvaluation:
 
             # accuracy using previously trained model #
             logging.info('accuracy using previously trained model')
-            input_arr = transformer.transform(test_df)
+            input_feature_name = list(transformer.feature_names_in_)
+            input_arr =transformer.transform(test_df[input_feature_name])
             y_pred = model.predict(input_arr)
             target_encoder.inverse_transform(y_pred[:5])
             
@@ -92,8 +93,9 @@ class ModelEvaluation:
 
 
             # current trained model f1 score and accuracy 
-            logging.info('accuracy using currentl trained model')
-            input_arr_current = current_trasformers.transform(test_df)
+            logging.info('accuracy using current trained model')
+            input_feature_name_cr = list(current_trasformers.feature_names_in_)
+            input_arr_current = current_trasformers.transform(test_df[input_feature_name_cr])
             y_pred_current = current_model.predict(input_arr_current)
             current_target_encoder.inverse_transform(y_pred[:5])
             logging.info(f"Prediction using current_model : {current_target_encoder.inverse_transform(y_pred_current[:5])}")
