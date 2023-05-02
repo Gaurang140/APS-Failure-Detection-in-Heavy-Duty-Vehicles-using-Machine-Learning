@@ -8,7 +8,7 @@ artifact
 *.so
 prediction
 saved_models
-.vscode
+.vscode/
 
 # Distribution / packaging
 .Python
