@@ -1,0 +1,14 @@
+why we used docker ? 
+
+in simple language , we need to run or test our code in different machine or there is some case where you are working with a developer
+who is using different operating system than you , its really difficult to test your code there to transfer and run in all env
+we are using docker, which will generate the docker file or container file to transfer your code into the other machines#
+or other development env.
+
+there are such concept like container  , crearte a image of your container that i have to learn as soon as possible 
+
+
+1. choose base machine in docker independent from the local machine
+2. copy code from local machine to docker machine
+3. install dependencies
+4. run your script

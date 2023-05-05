@@ -13,6 +13,7 @@ class ModelPusher:
                  data_transformation_artifacts : DataTransformationArtifact, 
                  model_trainer_artifact : ModelTrainerArtifacts):
         try:
+            logging.info(f"{'>>'*20}model_pusher{'<<'*20}")
             self.mode_pusher_config = mode_pusher_config
             self.data_transformation_artifacts = data_transformation_artifacts
             self.model_trainer_artifact = model_trainer_artifact
@@ -55,12 +56,13 @@ class ModelPusher:
 
 
 
-            model_pusher_config = ModelPusher(mode_pusher_config=self.mode_pusher_config , 
-                                              data_transformation_artifacts=self.data_transformation_artifacts, 
-                                              model_trainer_artifact=self.model_trainer_artifact)
+            model_pusher_artifact = ModelPusherArtifacts(pusher_model_dir=self.mode_pusher_config.model_model_pusher_dir, 
+                                                         save_model_dir=self.mode_pusher_config.outside_saved_model_dir ,)
 
 
+            logging.info(f"Model pusher artifact: {model_pusher_artifact}")
 
+            return model_pusher_artifact
 
 
 

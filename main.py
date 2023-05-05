@@ -8,7 +8,7 @@ print(__name__)
 
 if __name__ == "__main__":
     try:
-        #start_training_pipline()
+        start_training_pipline()
         output = start_batch_prediction(input_file_path=input_dir)
         print(output)
     except Exception as e:
