@@ -33,9 +33,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Copy requirements.txt
-        run: cp requirements.txt .
-
       - name: Install Utilities
         run: |
           sudo apt-get update
