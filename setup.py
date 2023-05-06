@@ -1,7 +1,7 @@
 from setuptools import find_packages , setup
 from typing import List
 
-REQUIREMENT_FILE = "requirements.txt"
+REQUIREMENT_FILE = "requirment.txt"
 HYPHEN_E_DOT = "-e ."
 def get_requirments()->List[str]:
     
