@@ -1,7 +1,6 @@
 artifact
 logs
 notebook
-*.txt
 prediction
 saved_models
 *.egg-info
