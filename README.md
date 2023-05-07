@@ -15,10 +15,10 @@
 The following technologies were used in this project:
 
 1. Python
-2. FastAPI
-3. Machine learning algorithms
-4. Docker
-5. MongoDB
+2. Machine learning algorithms
+3. Docker
+4. MongoDB
+5. Airflow
 
 ## Infrastructure required for deployment :
 1. AWS S3
