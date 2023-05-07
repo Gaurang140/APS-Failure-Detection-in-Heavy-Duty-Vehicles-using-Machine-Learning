@@ -1,9 +1,0 @@
-Deployment part 
-
-to deploy your machine learning model into the cloud or any other developement env
-we should first finished our development part and then  we can deploy our model in any cloud platform 
-
-aprt from that ,  what is ci/cd pipeline 
-
-
-ci/cd pipeline is countiuones integration and countiuones developement where you integration and developent is in countiuones phase.#
