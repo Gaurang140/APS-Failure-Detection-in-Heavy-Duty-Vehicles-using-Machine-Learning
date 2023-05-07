@@ -42,6 +42,6 @@ python main.py
 
 To download your dataset
 
-```
+```bash
 wget https://github.com/Gaurang140/APS-Failure-Detection-in-Heavy-Duty-Vehicles-using-Machine-Learning/blob/main/aps_failure_training_set1.csv
 ```
