@@ -23,7 +23,25 @@ The following technologies were used in this project:
 ## Infrastructure required for deployment :
 1. AWS S3
 2. AWS EC2
-3. Machine learning algorithms
-4. Docker
-5. MongoDB
+3. AWS ECR
+4. Git Actions
 
+
+
+### Step 1 - Install the requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 2 - Run main.py file
+
+```bash
+python main.py
+```
+
+To download your dataset
+
+```
+wget https://github.com/Gaurang140/APS-Failure-Detection-in-Heavy-Duty-Vehicles-using-Machine-Learning/blob/main/aps_failure_training_set1.csv
+```
