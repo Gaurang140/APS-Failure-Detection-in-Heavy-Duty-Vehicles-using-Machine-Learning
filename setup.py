@@ -17,7 +17,7 @@ def get_requirments()->List[str]:
 
 setup(
 
-    name='sensor',
+    name='Energy',
     version="0.0.1",
     author='Gaurang meghanathi',
     author_email='gaunranggirimeghanathi@gmail.com',
